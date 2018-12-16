@@ -101,6 +101,20 @@ function isEmail(email) {
     return regex.test(email);
 }
 /*********************************************************************************************/
+function loadingOverlay ( isToShowBool , message ) {
+	if ( isToShowBool ) {
+		$.LoadingOverlay ( 'show' , {
+			background : 'rgba(165, 190, 100, 0.5)' ,
+			textAutoResize : true ,
+			text : message === '' ? 'Loading ... ' : message
+		} );
+	}
+	else {
+		$.LoadingOverlay ( 'hide' );
+	}
+
+}
+/*********************************************************************************************/
 function showGeneralMessage(message, time) {
     $.toast({
         heading: '',
@@ -251,7 +265,8 @@ function isPasswordValid(str)
 
 /*********************************************************************************************/
 /**
- * This is a method override of the default JS replaceAll method to replace {search} occurrences
+ * This is a method override of the default JS replaceAll method to replace
+ * {search} occurrences
  * @param      {String} search  The date to be converted
  * @param      {String} replace The date to be converted
  * @return     {String}  String.
@@ -322,10 +337,12 @@ function getCurrentTimeLong(){
 /*********************************************************************************************/
 /**
  * Creates a random String based on the chars input <br>
- * example of usage: randomString(5); or randomString(5, 'PICKCHARSFROMTHISSET');
+ * example of usage: randomString(5); or randomString(5,
+ * 'PICKCHARSFROMTHISSET');
  * <br>
  * @param {integer} length - size of the output .
- * @param {string} chars - can be ignored ,but the the characters to use in creating the output.
+ * @param {string} chars - can be ignored ,but the the characters to use in
+ *         creating the output.
  * @returns {String} Random string of size @param lenSize
  */
 function randomIDString(lenSize, chars) {
