@@ -18,3 +18,6 @@
 
 <!-- Main CSS-->
 <link href="css/theme.css" rel="stylesheet" media="all">
+
+<link href="css/jquery.toast.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="js/nakupanda_bootstrap3dialog/bootstrap-dialog.min.css"/>

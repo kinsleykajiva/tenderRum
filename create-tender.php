@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <br><br>
                     <div class="clearfix"></div>
                     <div class="row">
                         <div class="col-lg-6">
@@ -58,27 +58,39 @@
                                         <h3 class="text-center title-2">Pay Invoice</h3>
                                     </div>
                                     <hr>-->
-                                    <form action="" onsubmit="return false;" method="post" novalidate="novalidate">
+                                    <form  onsubmit="return false;"  role="form" novalidate="novalidate">
                                         <?php
                                                 $tenderNumber = strtoupper(rand(11,40) . '-'.get_random_string(5) .'.'.get_random_string(rand(2,6)).'-'. rand(1,50) ) ;
                                         ?>
                                         <div class="form-group">
                                             <label for="tenderNumber" class="control-label mb-1">Tender Number  &nbsp;&nbsp; <strong> <small> <small><small> Randomly Generated Number </small></small> </small> </strong></label>
+                                            &nbsp;&nbsp; &nbsp;&nbsp;
+                                            <span style="color: red;display: none;" id="tenderNumberReq"><sup><small>Required</small></sup></span>
                                             <input id="tenderNumber" readonly  type="text" class="form-control" aria-required="true" aria-invalid="false" value="<?php print $tenderNumber ; ?>">
                                         </div>
                                         <div class="form-group has-success">
-                                            <label for="tendertitle" class="control-label mb-1">Title</label>
-                                            <input id="tendertitle" name="tendertitle" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card"
-                                                   autocomplete="tendertitle" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
-                                            <span class="help-block field-validation-valid" data-valmsg-for="tendertitle" data-valmsg-replace="true"></span>
+                                            <label for="tendertitle" class="control-label mb-1">Title</label> &nbsp;&nbsp; <span style="color: red;display: none;" id="tendertitleReq"><sup><small>Required</small></sup></span>
+                                            <input id="tendertitle" type="text" class="form-control ">
+                                         
                                         </div>
                                         <div class="form-group">
-                                            <label for="tenderCategory" class="control-label mb-1">Category</label>
+                                            <label for="tenderCategory" class="control-label mb-1">Category</label> &nbsp;&nbsp; &nbsp;&nbsp;
+                                            <span style="color: red;display: none;" id="tenderCategoryReq"><sup><small>Required</small></sup></span>
+                                            
                                             <select name="select" id="tenderCategory"  class="form-control cc-number identified visa" data-val="true" autocomplete="tenderCategory">
-                                                <option selected value="0">Please select</option>
-                                                <option value="1">Option #1</option>
-                                                <option value="2">Option #2</option>
-                                                <option value="3">Option #3</option>
+                                                <option selected="selected" value="null">Please select</option>
+		                                            <?php
+				                                            require_once "app/DBClass/DBTenderCategories.php";
+				                                            
+				                                            $tenderCategoriesObj = new DBTenderCategories();
+				                                            $datatenderCategories = $tenderCategoriesObj->getCategories ();
+				                                            while($tenderCateRow = mysqli_fetch_assoc($datatenderCategories)) {
+						                                            $tenderCateRow_id  = $tenderCateRow['id'] ;
+						                                            ?>
+                                                                <option value="<?php print  $tenderCateRow_id ; ?>"><?php print  $tenderCateRow['title']; ?></option>
+						                                            <?php
+				                                            } ?>
+                                                
                                             </select>
                                            
                                             <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
@@ -91,21 +103,60 @@
                                             <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                         </div>
                                         <div class="form-group">
-                                            Show Tender To Bidders After Saving &nbsp;&nbsp; <input type="checkbox" class="icheck" name="checkbox1"/>
+                                            Show Tender To Bidders After Saving &nbsp;&nbsp; <input id="isViewedAfterSaving" checked type="checkbox" class="icheck" name="checkbox1"/>
                                         </div>
                                         
                                         <div style="margin-top: 20px;">
-                                            <button id="payment-button" type="submit" class="btn btn-lg btn-info ">
+                                            <button  id="btnSaveTender" type="submit" class="btn btn-lg btn-info ">
                                                 <i class="fa fa-save"></i>&nbsp;
-                                                <span onclick="btnSaveTender();">Save</span>
-                                                <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                                <span >Save</span>
+                                              
                                             </button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                      
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Company</strong>
+                                    <small> Form</small>
+                                </div>
+                                <div class="card-body card-block">
+                                    <div class="form-group">
+                                        <label for="company" class=" form-control-label">Company</label>
+                                        <input type="text" id="company" placeholder="Enter your company name" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="vat" class=" form-control-label">VAT</label>
+                                        <input type="text" id="vat" placeholder="DE1234567890" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="street" class=" form-control-label">Street</label>
+                                        <input type="text" id="street" placeholder="Enter street name" class="form-control">
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-8">
+                                            <div class="form-group">
+                                                <label for="city" class=" form-control-label">City</label>
+                                                <input type="text" id="city" placeholder="Enter your city" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-group">
+                                                <label for="postal-code" class=" form-control-label">Postal Code</label>
+                                                <input type="text" id="postal-code" placeholder="Postal Code" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="country" class=" form-control-label">Country</label>
+                                        <input type="text" id="country" placeholder="Country name" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -123,6 +174,10 @@
 <script src="js/iCheck/icheck.min.js"></script>
 <script src="js/quil-editor/quill.min.js"></script>
 <script src="js/forpages/create-tender.js"></script>
+<script>
+
+
+</script>
 
 
 </body>

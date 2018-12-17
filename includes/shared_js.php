@@ -20,8 +20,10 @@
 
 <script src="js/jquery.toast.js"></script>
 <script src="js/loadingoverlay.min.js"></script>
+
 <!-- Main JS-->
 <script src="js/main.js"></script>
+<script src="js/nakupanda_bootstrap3dialog/bootstrap-dialog.min.js"></script>
 <script src="js/custome_base.js"></script>
 
 <script>
