@@ -6,7 +6,7 @@ $('input').iCheck({
 	checkedClass: 'checked'
 });
 
-const ur_i = "";
+const ur_i = "app/ajax_slave/create_tender_slave.php";
 
 let  editor = new Quill('#quillEditor', {
 	modules: {
@@ -29,7 +29,7 @@ function btnSaveTender () {
 	let tendertitle = $("#tendertitle").val().trim();
 	let tenderCategory = $("#tenderCategory").val();
 	let isViewedAfterSaving = $("#isViewedAfterSaving").is(":checked");
-
+	let editor2 = editor.container.firstChild.innerHTML ;
 	if(tenderNumber === ""){
 		$("#tenderNumberReq").show("slow");
 		error_perInput("#tenderNumber", "Reload Page !");
@@ -53,14 +53,39 @@ function btnSaveTender () {
 	}
 	error_perInput("#tenderCategory", "");
 	$("#tenderCategoryReq").hide("slow");
+	let inputCartegories= $("#inputCartegories");
+	let inputs = inputCartegories.find("input");
+	let selects = inputCartegories.find("select");
+	let compJson = [];
+	let compJsonSelect = [];
+	inputs.each((i, obj)=> {
+		compJson.push($(obj).attr("data-id"));
+	});
+	selects.each((i, obj)=> {
+		compJsonSelect.push(obj.value);
+	});
 
 	loadingOverlay(true , "Saving ...");
 	$.post(ur_i , {
-		data:1
+		data_tender_c : 1 ,
+		tenderNumber : tenderNumber ,
+		tendertitle : tendertitle ,
+		tenderCategory : tenderCategory ,
+		editor2 : editor2 ,
+		compJson : compJson + '' ,
+		compJsonSelect : compJsonSelect + '',
+		ux:1
 	}).done(response =>{
 		loadingOverlay(false , "Saving ...");
+		if(response == 'done'){
+			showSuccessMessage("Saved" , 5);
+		}else {
+			showErrorMessage(" Failed to save , try again !" , 4);
+
+		}
 	}).fail((jqxhr, textStatus, error) =>{
 		loadingOverlay(false , "Saving ...");
+		showErrorMessage("Connection Failed !" , 4);
 		BootstrapDialog.alert({
 			title      : 'DB-Access failed ',
 			message    : "Connection Error occurred !Please try again though .",
@@ -75,7 +100,17 @@ function btnSaveTender () {
 	/*error_perInput("#tenderNumber", "Attorney selection required !");
 	loadingOverlay(true , "Saving ...") ;*/
 }
+function showBrands () {
+	let tenderCategory = $("#tenderCategory").val();
+	let cardBrands = $("#cardBrands");
+	if(tenderCategory !== 'null'){
+		cardBrands.slideDown('slow');
+	}else{
+		cardBrands.slideUp('slow');
+	}
 
+
+}
 
 
 

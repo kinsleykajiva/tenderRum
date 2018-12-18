@@ -77,7 +77,7 @@
                                             <label for="tenderCategory" class="control-label mb-1">Category</label> &nbsp;&nbsp; &nbsp;&nbsp;
                                             <span style="color: red;display: none;" id="tenderCategoryReq"><sup><small>Required</small></sup></span>
                                             
-                                            <select name="select" id="tenderCategory"  class="form-control cc-number identified visa" data-val="true" autocomplete="tenderCategory">
+                                            <select onchange="showBrands();" name="select" id="tenderCategory"  class="form-control identified visa" data-val="true" >
                                                 <option selected="selected" value="null">Please select</option>
 		                                            <?php
 				                                            require_once "app/DBClass/DBTenderCategories.php";
@@ -117,43 +117,45 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6" style="display: none;" id="cardBrands">
                             <div class="card">
                                 <div class="card-header">
-                                    <strong>Company</strong>
-                                    <small> Form</small>
+                                    <strong>Brands OF Consideration</strong>
+                                   <!-- <small> Form</small>-->
                                 </div>
-                                <div class="card-body card-block">
-                                    <div class="form-group">
-                                        <label for="company" class=" form-control-label">Company</label>
-                                        <input type="text" id="company" placeholder="Enter your company name" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="vat" class=" form-control-label">VAT</label>
-                                        <input type="text" id="vat" placeholder="DE1234567890" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="street" class=" form-control-label">Street</label>
-                                        <input type="text" id="street" placeholder="Enter street name" class="form-control">
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col-8">
+                                <div class="card-body card-block" id="inputCartegories">
+		                                <?php
+				                                require_once "app/DBClass/DBAcceptableBrands.php";
+				                                $brandsObj  = new DBAcceptableBrands();
+				                                $brandsData = $brandsObj ->getBrands  ();
+				                                while($brandsRow = mysqli_fetch_assoc ( $brandsData)){
+				                                    $brandName = $brandsRow[ 'title'];
+		                                ?>
+                                    <div class="row">
+                                        <div class="col-md-8">
                                             <div class="form-group">
-                                                <label for="city" class=" form-control-label">City</label>
-                                                <input type="text" id="city" placeholder="Enter your city" class="form-control">
+                                                <label for="company" class=" form-control-label">Company</label>
+                                                <input type="text" data-id="<?php print $brandsRow[ 'id']; ?>" value="<?php print $brandName; ?>" readonly id="brand" placeholder="company name" class="form-control">
                                             </div>
                                         </div>
-                                        <div class="col-8">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="postal-code" class=" form-control-label">Postal Code</label>
-                                                <input type="text" id="postal-code" placeholder="Postal Code" class="form-control">
+                                                <label for="street" class=" form-control-label">Score</label>
+                                                <select type="text" id="company_score"  class="form-control">
+                                                   
+                                                    <option selected="selected" value="null">Select</option>
+                                                    <option  value="1">(1) Acceptable</option>
+                                                    <option  value="2">(2) Good </option>
+                                                    <option value="3">(3) Exceptional </option>
+                                                    <option value="4">(4) Very Exceptional </option>
+                                                    <option value="5">(5) The Best </option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="country" class=" form-control-label">Country</label>
-                                        <input type="text" id="country" placeholder="Country name" class="form-control">
-                                    </div>
+                                    <?php }
+                                    ?>
+                                   
                                 </div>
                             </div>
                         </div>
