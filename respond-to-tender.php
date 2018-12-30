@@ -26,6 +26,16 @@
 		<?php require 'includes/shared_sidebar.php'; ?>
 
     <!-- END MENU SIDEBAR-->
+    <?php 
+
+    if(!isset($_GET['artile']) || !is_numeric($_GET['artile']) || empty($_GET['artile'])){
+         header('location:view-tenders.php');
+        echo '<META HTTP-EQUIV="Refresh" Content="0; URL=view-tenders.php">';    
+        exit;
+    }
+    $getId = $_GET['artile'];
+
+    ?>
 
     <!-- PAGE CONTAINER-->
     <div class="page-container">
@@ -57,7 +67,7 @@
                                         <?php
                                             require_once  "app/DBClass/DBTender.php";
 		                                        $DBTender = new DBTender();
-		                                        $tenderData = $DBTender->getTender (1);
+		                                        $tenderData = $DBTender->getTender ($getId);
                                         ?>
                                         <div class="form-group">
                                             <label for="cc-name" class="control-label mb-1">
@@ -71,7 +81,7 @@
                                                     print $tenderData['title'];
                                                 ?>
                                             </label>
-                                            <span id="in_tender_id" style="display: none;">1</span>
+                                            <span id="in_tender_id" style="display: none;"><?php print $getId; ?></span>
                                             
                                              </div>
                                         <div class="form-group has-success">
@@ -128,7 +138,7 @@
                                          <div class="form-group">
                                             <label for="quillEditor" class="control-label mb-1">Description</label>
                                           
-                                            <div name="quillEditor" id="quillEditor"  style="height: 75px; margin-bottom: 20px;"  class="form-control"></div>
+                                            <div name="quillEditor" id="quillEditor"  style="height: 125px; margin-bottom: 20px;"  class="form-control"></div>
 
                                             <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                         </div>

@@ -15,8 +15,12 @@
 												<li>
 														<a href="create-tender.php">Create </a>
 												</li>
+												
                                             <li>
                                                 <a href="view-tenders.php">View </a>
+                                            </li>
+						 <li>
+                                                <a href="view-tenders-response.php">View Tender Responses </a>
                                             </li>
 												
 										</ul>
@@ -31,7 +35,11 @@
                                     
 
                                 </ul>
-                            </li>
+                            </li>	
+                            					<li>
+														<a href="view-tenders.php">
+															<i class="fas fa-chart-bar"> </i>View Tenders </a>
+									</li>
 								<li>
 										<a href="chart.html">
 												<i class="fas fa-chart-bar"></i>Charts</a>
