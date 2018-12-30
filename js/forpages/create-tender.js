@@ -79,6 +79,10 @@ function btnSaveTender () {
 		loadingOverlay(false , "Saving ...");
 		if(response == 'done'){
 			showSuccessMessage("Saved" , 5);
+			/*$("#tenderCategory").val('null');
+			$("#tenderNumber").val('');
+			$("#tendertitle").val('');*/
+			location.reload();
 		}else {
 			showErrorMessage(" Failed to save , try again !" , 4);
 

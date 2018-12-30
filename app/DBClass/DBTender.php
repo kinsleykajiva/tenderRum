@@ -16,6 +16,13 @@
 						$this->DbCon = mysqli_connect($HOST, $USER, $PASSWORD, $DATABASE);
 						
 				}
+				public function getTender(int $record_id){
+						$res = $this->query("SELECT * FROM " . $this->TABLE . " WHERE id = $record_id ");
+						return mysqli_fetch_assoc ($res);
+				}
+				public function deleteTender(int  $record_id):string{
+					return $this->query("DELETE FROM tenderrum.tender WHERE id = $record_id ") ? 'done' : 'failed';
+				}
 				public function saveTender(string $tenderNumber , string $tendertitle , int  $tenderCategory , string $editor2 ,
 				                           string $compJson , string $compJsonSelect , int $ux_i ):string{
 						$editor2 = !empty($editor2) ? "'$editor2'" : 'NULL';

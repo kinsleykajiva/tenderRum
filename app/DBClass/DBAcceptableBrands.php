@@ -6,8 +6,7 @@
 		 * Time: 4:35 AM
 		 */
 		
-		class DBAcceptableBrands
-		{
+		class DBAcceptableBrands {
 		
 				private $DbCon;
 				private $TABLE = "acceptable_brands";
@@ -18,6 +17,9 @@
 						$this->DbCon = mysqli_connect($HOST, $USER, $PASSWORD, $DATABASE);
 						
 				}
+
+				
+
 				public function getBrands(){
 						return $this->query ("SELECT * FROM " . $this->TABLE);
 				}
@@ -25,5 +27,6 @@
 				private function query(string $query){
 						return mysqli_query ($this->DbCon, $query );
 				}
+
 		
 		}

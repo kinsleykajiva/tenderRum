@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			".idea": true,
+			".vscode": true,
+			"**.code-workspace": true,
+			"**.html": true,
+			"css": true,
+			"database": true,
+			"fonts": true,
+			"vendor": true
+		}
+	}
+}

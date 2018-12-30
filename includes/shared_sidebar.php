@@ -21,6 +21,17 @@
 												
 										</ul>
 								</li>
+                            <li class="active has-sub">
+                                <a class="js-arrow" href="#">
+                                    <i class="fas fa-tachometer-alt"></i>View Tenders    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-right"></i> </a>
+                                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                    <li>
+                                        <a href="respond-to-tender.php">Respond To Tender </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
 								<li>
 										<a href="chart.html">
 												<i class="fas fa-chart-bar"></i>Charts</a>

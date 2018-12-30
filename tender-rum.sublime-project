@@ -1,0 +1,50 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
+		}
+	]
+	,
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.pyc",
+				"*.pyo",
+				".project",
+				".gitignore",
+				".htaccess",
+				"*.html",
+				"*.sublime-project",
+				"*.code-workspace"
+			],
+			"folder_exclude_patterns":
+			[
+				".svn",
+				"._d",
+				".metadata",
+				".settings",
+				"fav",
+				".phpintel",
+				".vscode",
+				".idea",
+				"database",
+				"vendor",
+				"images",
+				"fonts",
+				"css"
+			],
+			"path": "."
+		}
+	],
+	"font_size": 14.0,
+	"settings":
+	{
+		"tab_size": 8
+	}
+}

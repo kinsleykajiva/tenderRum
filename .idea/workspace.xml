@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6651f2b5-de41-4e93-befc-8f9e29f3861a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/DBClass/DBAcceptableBrands.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/DBClass/DBCompanies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/DBClass/DBTender.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ajax_slave/create_tender_slave.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/forpages/respond-to-tender.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ItemComponents.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/MultiCriteriaDecisionMaking.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Tender.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/TenderProvider_Supplier.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/respond-to-tender.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-tender.php" beforeDir="false" afterPath="$PROJECT_DIR$/create-tender.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DBClass/DBTender.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DBClass/DBTender.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/shared_sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/shared_sidebar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/forpages/create-tender.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/forpages/create-tender.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,84 +34,35 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.10595238">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/create-tender.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-641">
-                  <folding>
-                    <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/DBClass/DBCompanies.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="483">
-                  <caret line="26" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/DBClass/DBTenderCategories.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="437">
-                  <caret line="24" column="17" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="24" selection-end-column="17" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <splitter split-orientation="horizontal" split-proportion="0.69041276">
-          <split-first>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/js/forpages/create-tender.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="689">
-                      <caret line="65" column="9" lean-forward="true" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
-                      <folding>
-                        <element signature="e#891#1001#0" />
-                        <marker date="1545118540922" expanded="true" signature="1324:1726" ph="..." />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/ajax_slave/create_tender_slave.php">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="368">
-                      <caret line="21" column="92" lean-forward="true" selection-start-line="21" selection-start-column="92" selection-end-line="21" selection-end-column="92" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf>
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/app/DBClass/DBTender.php">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="638">
-                      <caret line="42" column="57" lean-forward="true" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/respond-to-tender.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="828">
+              <caret line="111" column="101" selection-start-line="111" selection-start-column="90" selection-end-line="111" selection-end-column="101" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/forpages/respond-to-tender.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="449">
+              <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/DBClass/DBTender.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="828">
+              <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -136,7 +87,6 @@
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/js/custome_base.js" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/includes/shared_sidebar.php" />
         <option value="$PROJECT_DIR$/forms-templates.txt" />
         <option value="$PROJECT_DIR$/includes/shared_header.php" />
         <option value="$PROJECT_DIR$/lib/utilsFuncs.php" />
@@ -149,8 +99,12 @@
         <option value="$PROJECT_DIR$/app/DBClass/DBAcceptableBrands.php" />
         <option value="$PROJECT_DIR$/create-tender.php" />
         <option value="$PROJECT_DIR$/app/ajax_slave/create_tender_slave.php" />
-        <option value="$PROJECT_DIR$/js/forpages/create-tender.js" />
+        <option value="$PROJECT_DIR$/includes/shared_sidebar.php" />
         <option value="$PROJECT_DIR$/app/DBClass/DBTender.php" />
+        <option value="$PROJECT_DIR$/lib/TenderProvider_Supplier.php" />
+        <option value="$PROJECT_DIR$/respond-to-tender.php" />
+        <option value="$PROJECT_DIR$/js/forpages/respond-to-tender.js" />
+        <option value="$PROJECT_DIR$/js/forpages/create-tender.js" />
       </list>
     </option>
   </component>
@@ -186,15 +140,24 @@
             <path>
               <item name="tenderRum" type="b2602c69:ProjectViewProjectNode" />
               <item name="tenderRum" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="DBClass" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tenderRum" type="b2602c69:ProjectViewProjectNode" />
               <item name="tenderRum" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="DBClass" type="462c0819:PsiDirectoryNode" />
-              <item name="DBTender.php" type="88303cf5:PhpFileNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="forpages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tenderRum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tenderRum" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tenderRum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tenderRum" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="TenderProvider_Supplier.php" type="88303cf5:PhpFileNode" />
             </path>
           </expand>
           <select />
@@ -213,10 +176,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp7.3\htdocs\projects\AAllAA\tenderRum\js" />
-      <recent name="C:\xampp7.3\htdocs\projects\AAllAA\tenderRum\css" />
       <recent name="C:\xampp7.3\htdocs\projects\AAllAA\tenderRum\lib" />
       <recent name="C:\xampp7.3\htdocs\projects\AAllAA\tenderRum" />
+      <recent name="C:\xampp7.3\htdocs\projects\AAllAA\tenderRum\js" />
+      <recent name="C:\xampp7.3\htdocs\projects\AAllAA\tenderRum\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -254,18 +217,29 @@
       <workItem from="1544901536617" duration="3727000" />
       <workItem from="1544948328296" duration="19434000" />
       <workItem from="1544984219131" duration="1923000" />
-      <workItem from="1545068564312" duration="15364000" />
+      <workItem from="1545068564312" duration="25982000" />
+      <workItem from="1545156335454" duration="6071000" />
+      <workItem from="1545330549219" duration="557000" />
+      <workItem from="1545395927016" duration="1515000" />
+      <workItem from="1545483293399" duration="880000" />
     </task>
+    <task id="LOCAL-00001" summary="done dcreate tender backend">
+      <created>1545120858435</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1545120858436</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40448000" />
+    <option name="totallyTimeSpent" value="60089000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24880952" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24880952" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -293,7 +267,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="done dcreate tender backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="done dcreate tender backend" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
@@ -323,31 +298,6 @@
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#header#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/shared_sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="15" column="82" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="82" />
-          <folding>
-            <element signature="e#490#496#0#HTML" expanded="true" />
-            <element signature="e#496#502#0#HTML" expanded="true" />
-            <element signature="e#502#508#0#HTML" expanded="true" />
-            <element signature="e#508#514#0#HTML" expanded="true" />
-            <element signature="e#514#520#0#HTML" expanded="true" />
-            <element signature="e#520#526#0#HTML" expanded="true" />
-            <element signature="e#526#532#0#HTML" expanded="true" />
-            <element signature="e#532#538#0#HTML" expanded="true" />
-            <element signature="e#538#544#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
@@ -387,21 +337,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11500">
-          <caret line="500" column="30" selection-start-line="500" selection-start-column="30" selection-end-line="500" selection-end-column="30" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/slider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2661" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/slider.js" />
     <entry file="file://$PROJECT_DIR$/includes/shared_js.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -450,15 +386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create-tender.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-641">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/ajax_slave/create_tender_slave.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -466,21 +393,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/DBClass/DBTender.php">
+    <entry file="file://$PROJECT_DIR$/includes/shared_sidebar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="42" column="57" lean-forward="true" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
+        <state relative-caret-position="506">
+          <caret line="28" column="66" lean-forward="true" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="500" column="34" lean-forward="true" selection-start-line="445" selection-start-column="27" selection-end-line="500" selection-end-column="34" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/TenderProvider_Supplier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-tender.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="71" column="224" lean-forward="true" selection-start-line="71" selection-start-column="123" selection-end-line="71" selection-end-column="224" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/forpages/create-tender.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="65" column="9" lean-forward="true" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
+        <state relative-caret-position="557">
+          <caret line="89" column="44" lean-forward="true" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
           <folding>
-            <element signature="e#891#1001#0" />
-            <marker date="1545118540922" expanded="true" signature="1324:1726" ph="..." />
+            <marker date="1545222800042" expanded="true" signature="1324:1726" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DBClass/DBTender.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/forpages/respond-to-tender.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/respond-to-tender.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="111" column="101" selection-start-line="111" selection-start-column="90" selection-end-line="111" selection-end-column="101" />
         </state>
       </provider>
     </entry>
