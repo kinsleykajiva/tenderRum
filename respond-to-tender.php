@@ -113,7 +113,7 @@
                                         </div>
                                         <div class="row" >
                                             <div class="col-6">
-                                                <select class="form-control cc-cvc" id="supplierBrand" >
+                                                <select class="form-control cc-cvc" onchange="showBrandsDiv()" id="supplierBrand" >
                                                 <option value='null'> Select Supplier </option>
                                                 <option value='self'> Self  Supply </option>
                                                 <option value='known_brands'> Known Brand Supply </option>
@@ -144,7 +144,7 @@
                                 </div>
                             </div>
                         </div>  <!-- end of div atg -->
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" style="display: none;" id="divBrands">
                             <div class="card">
                                 <div class="card-header">
                                             <strong id="brandsHeader">Known Brands With Regards</strong>                                           
@@ -173,16 +173,7 @@
                                                             </label>
                                                         </div>
                                                     <?php } ?>
-                                                       <!--  <div class="radio">
-                                                            <label for="radio2" class="form-check-label ">
-                                                                <input type="radio" id="radio2" name="radios" value="option2" class="form-check-input">Option 2
-                                                            </label>
-                                                        </div> -->
-                                                        <!-- <div class="radio">
-                                                            <label for="radio3" class="form-check-label ">
-                                                                <input type="radio" id="radio3" name="radios" value="option3" class="form-check-input">Option 3
-                                                            </label>
-                                                        </div> -->
+                                                      
                                                     </div>
                                                 </div>
                                             </div>

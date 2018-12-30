@@ -99,7 +99,7 @@ $("#btnSaveTender").click(()=>{
 			$("#tendertimespan").val('');
 			$("#warrantee_period").val('');
 			$("#tenderprice").val('');
-			editor2.setText("");
+			editor.setText("");
 		}else {
 			showErrorMessage(" Failed to save , try again !" , 4);
 
@@ -119,6 +119,18 @@ $("#btnSaveTender").click(()=>{
 });
 
 
+
+
+function showBrandsDiv(){
+	let divBrands = $("#divBrands");
+	let supplierBrand = $("#supplierBrand").val();
+
+	if( supplierBrand !== 'null' && supplierBrand === "known_brands"){
+		divBrands.slideDown('slow');
+	}else{
+		divBrands.slideUp("slow");
+	}
+}
 
 
 
