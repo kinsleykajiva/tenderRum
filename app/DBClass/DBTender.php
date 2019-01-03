@@ -24,13 +24,13 @@
 					return $this->query("DELETE FROM tenderrum.tender WHERE id = $record_id ") ? 'done' : 'failed';
 				}
 				public function saveTender(string $tenderNumber , string $tendertitle , int  $tenderCategory , string $editor2 ,
-				                           string $compJson , string $compJsonSelect , int $ux_i ):string{
+				                           string $compJson , string $compJsonSelect , int $ux_i , string $due_date ):string{
 						$editor2 = !empty($editor2) ? "'$editor2'" : 'NULL';
 						$compJson = !empty($compJson) ? "'$compJson'" : '';
 						$compJsonSelect = !empty($compJsonSelect) ? "'$compJsonSelect'" : '';
 						
-						$res = $this->query ("INSERT INTO   " . $this->TABLE . " (tender_number , title , description, date_created , created_by , catagory , isdeleted )
-						VALUES ( '$tenderNumber' , '$tendertitle' ,$editor2 , NOW() ,$ux_i ,$tenderCategory,0  )");
+						$res = $this->query ("INSERT INTO   " . $this->TABLE . " (tender_number , title , description, date_created , due_date , created_by , catagory , isdeleted )
+						VALUES ( '$tenderNumber' , '$tendertitle' ,$editor2 , NOW(), '$due_date' ,$ux_i ,$tenderCategory , 0  )");
 						
 						if($res){
 								$lastid = mysqli_insert_id($this->DbCon);
@@ -56,10 +56,13 @@
 						return 'failed';
 				}
 				public function getTenders(){
-						return $this->query ("SELECT * FROM " . $this->TABLE);
+						return $this->query ("SELECT tenders.* , users.username , tender_categories.title
+							FROM `tenders`
+							JOIN users on users.id = tenders.created_by
+							JOIN tender_categories on tender_categories.id = tenders.catagory ");
 				}
 				
 				private function query(string $query){
-						return mysqli_query ($this->DbCon, $query );
+					return mysqli_query ($this->DbCon, $query );
 				}
 		}

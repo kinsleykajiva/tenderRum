@@ -41,7 +41,7 @@
 								
 								
 								
-								//var_dump  ($object ->getTenderProviderSupplier ()->getYearsExperience()) ;
+								$tenderProvidersNameOrId = $object ->getTenderProviderSupplier() ->getCompanyName () ;
 								$beneficiaries_TenderProviderSupplier_yearsExperience = $object ->getTenderProviderSupplier ()->getYearsExperience()  /  $TenderProviderSupplier_yearsExperienceMaxVal ;
 								$temp_Weight = ! isset( $object -> getWeightsArr ()[ 4 ] ) ? 1 : $object -> getWeightsArr ()[ 4 ] ;
 								$beneficiaries_TenderProviderSupplier_yearsExperience = $beneficiaries_TenderProviderSupplier_yearsExperience *   $temp_Weight;
@@ -67,20 +67,23 @@
 								//print $rowResult  . " = ".$nonBeneficial. " + " . $beneficiaries_time_period_in_days . " + " .$beneficiaries_TenderProviderSupplier_yearsExperience . " + " .$beneficiaries_TenderProviderSupplier_Name;
 								//exit;
 								//$rowResult = number_format  ($rowResult, 2, '.', ' '); //771
-								print "\n".$rowResult  . " = ".$nonBeneficial. " + " . $beneficiaries_time_period_in_days . " + " .$beneficiaries_TenderProviderSupplier_yearsExperience . " + " .$beneficiaries_TenderProviderSupplier_Name;
+								/*print "\n".$rowResult  . " = ".$nonBeneficial. " + " . $beneficiaries_time_period_in_days . " + " .$beneficiaries_TenderProviderSupplier_yearsExperience . " + " .$beneficiaries_TenderProviderSupplier_Name;*/
 								//exit;
 								array_push ( self ::$performance_score ,
-								             array (
-									               "weights_arr"                   => $object -> getWeightsArr () ,
-									               "price"                         => $nonBeneficial ,
-									               "itemComponents"                => $object -> getItemComponents () ,
-									               "provision_time_period_in_days" => $beneficiaries_time_period_in_days ,
-									               "tenderProvider_Supplier"       => array(
-									               	                                            "experience_score" => $beneficiaries_TenderProviderSupplier_yearsExperience
-									                                                    ),
-									               "itemsCount"                    => $object -> getItemsCount () ,
-									               "rowResult"                     => $rowResult ,
-								             )
+									array (
+										"weights_arr"                   => $object -> getWeightsArr () ,
+										"price"                         => $nonBeneficial ,
+										"price_actual"                  => $price ,
+										"itemComponents"                => $object -> getItemComponents () ,
+										"provision_time_period_in_days" => $beneficiaries_time_period_in_days ,
+										"tenderProvider_Supplier"       => array(
+											"experience_score" => $beneficiaries_TenderProviderSupplier_yearsExperience
+										),
+										"itemsCount"                    => $object -> getItemsCount () ,
+										"rowResult"                     => $rowResult ,
+										"tenderProvidersNameOrId"      => $tenderProvidersNameOrId ,
+										"otherDataArr"      		=> $object ->getOtherData() ,
+									)
 								);
 						}
 				}
@@ -92,14 +95,10 @@
 						foreach (self::$performance_score as $tender){
 								array_push ($temp ,$tender['rowResult']  ) ;
 						}
-						//arsort ($temp , SORT_NUMERIC) ;
+						arsort ($temp , SORT_NUMERIC) ;
 						
-						foreach ($temp as $tender){
-								
-								print "\n".$tender .  " " . PHP_EOL;
-								
-						}
-						self::resetArrayData ();
+						return $temp ;
+						
 				}
 				
 				public static function fetch():array{

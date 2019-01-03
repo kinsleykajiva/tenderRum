@@ -14,11 +14,12 @@
 			$compJson = $_POST['compJson'];
 			$compJsonSelect = $_POST['compJsonSelect'];
 			$ux_i = $_POST['ux'];
+			$due_date = $_POST['due_date'];
 			
 			require_once "../DBClass/DBTender.php";
 			$DBTender = new DBTender();
 			
 			print $DBTender->saveTender ( $tenderNumber ,  $tendertitle , (int  ) $tenderCategory ,  $editor2 ,
-				                            $compJson ,  $compJsonSelect , (int  )  $ux_i );
+				                            $compJson ,  $compJsonSelect , (int  )  $ux_i  , $due_date);
 			
 		}

@@ -53,6 +53,7 @@
                             <div class="overview-wrap">
                                 <h2 class="title-1">Tender Responses For :</h2>
 
+
                             </div>
                         </div>
                     </div>
@@ -64,6 +65,7 @@
                                 <br>
                                 <br>
                                 <h3 class="title-5 m-b-35">
+                                    
                                     <?php
                                                     print $tenderData['title'];
                                                 ?>
@@ -84,51 +86,98 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive table-responsive-data2">
-                                    <table class="table table-data2">
+                                    <table class="table table-data2"   >
                                         <thead>
                                             <tr>
-                                                <th>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </th>
-                                                <th>name</th>
-                                                <th>email</th>
-                                                <th>description</th>
-                                                <th>date</th>
-                                                <th>status</th>
+                                                
+                                                <th  >Tender ID</th>
+                                                <th>Supplier</th>
+                                                <th>Catagory</th>
+                                                <th>Date Submited</th>
                                                 <th>price</th>
+                                                <th id="sl" >Perfomance Score (4 d.p)</th>
+                                               
                                                 <th></th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="mytable">
                                             <?php 
 
-                                            require 'app/DBClass/DBTenderProposal.php';    
+                                            require 'app/DBClass/DBTenderProposal.php';   
+                                            require 'app/DBClass/DBTenderBrandsCorrelations.php'; 
+                                            require 'app/DBClass/DBCompanies.php'; 
+
+                                            require_once 'lib/ItemComponents.php';                                         
+                                            require_once 'lib/TenderProvider_Supplier.php';
+                                            require_once 'lib/MultiCriteriaDecisionMaking.php';
+                                            require_once 'lib/Tender.php';
+                                            
+                                            function array_push_assoc($array, $key, $value){
+                                                $array[$key] = $value;
+                                                return $array;
+                                            }
+
                                             $tenderProposalObject = new DBTenderProposal();  
+                                            $companiesObject = new DBCompanies();
                                             $proposalsData = $tenderProposalObject ->getAllProposals();
 
-                                            while($proposalsRow = mysqli_fetch_assoc($proposalsData)) {                                    
+                                            $brandCorrection = new DBTenderBrandsCorrelations();
+                                             $itemComponents                = new ItemComponents( [] );   // [1]
+
+                                            
+                                            $savedBrands =  array(); // get brands in the fomr of array                                            
+
+                                            while($proposalsRow = mysqli_fetch_assoc($proposalsData)) { 
+                                                
+                                                $weights_arr                   = array ( 0.14 , 0.14, 0.14, 0.14 ,0.14 ,0.14,  0.14);
+                                               $savedBrands = $brandCorrection ->getBrandsWightDataForProposal($proposalsRow['id'] );
+                                                $price                         = (float) $proposalsRow['price']; // [0]
+                                                //print $price . '\n';
+                                                $provision_time_period_in_days =  $proposalsRow['time_of_service_provision']; // [2]
+                                                $proposalMNaker = $companiesObject->getCompanyDetails($proposalsRow['created_by']) ; 
+                                                $providersName                 = new TenderProvider_Supplier( $proposalMNaker['title'] , (float) $proposalMNaker['years_of_operation'] );  // [3]  // [4]
+                                                $itemsCount                    = 1.0;  // [5]
+                                                $computer_1                    = new Tender(
+                                                $weights_arr , $price , $itemComponents , $provision_time_period_in_days , $providersName , $itemsCount , $savedBrands , $proposalsRow
+                                                );
+
+                                            } 
+
+                                            MultiCriteriaDecisionMaking::normalise ();
+                                            $resultProcess = MultiCriteriaDecisionMaking::getResultsFactory ();  
+
+                                           
+                                            function sortByOrder($a, $b) {
+                                                return $a['rowResult'] - $b['rowResult'];
+                                            }
+                                           
+                                           // usort ( MultiCriteriaDecisionMaking::$performance_score , 'sortByOrder') ;            
+                                            
+                                            foreach (MultiCriteriaDecisionMaking::$performance_score as $ObjKey ) {                                                                              
 
                                             ?>
                                             <tr class="tr-shadow">
+                                               
+                                                <td><?php  print $ObjKey ['otherDataArr'] ['tender_number']; ?></td>
                                                 <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
+                                                    <span class="block-email">
+                                                        <?php  print $ObjKey ['tenderProvidersNameOrId'] ; ?>
+                                                    </span>
                                                 </td>
-                                                <td><?php print $proposalsRow['price'] ; ?></td>
+                                                <td class="desc">
+                                                     <?php  print  $ObjKey ['otherDataArr'] ['ttender_catagory']  ; ?>
+                                                </td>
+                                                <td> <?php  print  $ObjKey ['otherDataArr']  ['date_created'] ; ?> </td>
                                                 <td>
-                                                    <span class="block-email">lori@example.com</span>
+                                                    <span class="status--process">
+                                                         <?php  print $ObjKey ['price_actual'] ; ?>
+                                                    </span>
                                                 </td>
-                                                <td class="desc">Samsung S8 Black</td>
-                                                <td>2018-09-27 02:12</td>
-                                                <td>
-                                                    <span class="status--process">Processed</span>
-                                                </td>
-                                                <td>$679.00</td>
+                                                <td  >
+                                                 <?php   print round( $ObjKey ['rowResult'] , 4)  ; ?>
+                                                     
+                                                 </td>
+                                                
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
@@ -140,16 +189,39 @@
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                        <button onclick="viewHiddenDiv('<?php print $ObjKey['otherDataArr']['id']; ?>')" class="item" data-toggle="tooltip" data-placement="top" title="More">
                                                             <i class="zmdi zmdi-more"></i>
                                                         </button>
                                                     </div>
                                                 </td>
                                             </tr>
-                                           
                                           
+                                            
+                                            <tr style="display: none;" id="<?php print $ObjKey['otherDataArr']['id']. '_hiddemRowDiv' ; ?>" >
+                                                <td colspan="7">
+                                                    <div class="">
+                                                        <div class="col-md-10">
+                                                            <div class="card">
+                                                                <div class="card-header">
+                                                                    <strong class="card-title">
+                                                                        Warrantee perod :  <?php print $ObjKey['otherDataArr']['warrantee_period'] ;?>  Years <br>
+                                                                        Time Of Provisioning :  <?php print $ObjKey['otherDataArr']['time_of_service_provision'] ;?> Days<br>
+
+                                                                    </strong>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <p class="card-text">
+                                                                        <?php print $ObjKey['otherDataArr']['description'] ;?>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                             <tr class="spacer"></tr> 
-                                        <?php } ?>
+                                           
+                                        <?php  } ?>
                                           
                                         </tbody>
                                     </table>
@@ -170,8 +242,27 @@
 
 <!-- Jquery JS-->
 <?php require 'includes/shared_js.php'; ?>
+<script type="text/javascript" src="js/forpages/view-tenders-response.js"></script>
+
+<script type="text/javascript">
+   $(document).ready(function () {
+       let max = 0;
+       $('#mytable tr').find('td:nth-last-child(2)').each(function(){
+
+        max = Math.max($(this).text(),max);
+    });
+      
+
+$("#mytable td:nth-child(6)").each(function () {
+   if (parseFloat($(this).text()) === max ) {
+    $(this).parent("tr").css("background-color", "green");
+}
 
 
+});
+
+});
+</script>
 </body>
 
 </html>

@@ -96,6 +96,11 @@
                                             <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                         </div>
                                         <div class="form-group">
+                                            <label class="control-label mb-1">Due Date (yyyy-mm-dd) </label>
+                                            <input type="date" id="due_date" class="form-control" placeholder="yyyy-mm-dd" >
+                                            <span style="color: red;display: none;" id="tenderDueDateReq"><sup><small>Required</small></sup></span>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="tenderCategory" class="control-label mb-1">Description</label>
                                           
                                             <div name="quillEditor" id="quillEditor"  style="height: 135px; margin-bottom: 20px;"  class="form-control"></div>

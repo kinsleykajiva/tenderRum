@@ -18,7 +18,12 @@
 
 	}
 	public function getAllProposals(){
-		return $this ->query("SELECT * FROM tender_brands_correlations");
+		return $this ->query("SELECT tender_proposal.* , tenders.tender_number , tenders.catagory  , (select tender_categories.title FROM tender_categories WHERE tender_categories.id = tenders.catagory) AS ttender_catagory
+
+			FROM tender_proposal
+
+			JOIN tenders on tenders.id = tender_proposal.tender_id
+		");
 	}
 	public function saveNewProposal(string $tender_id ,string $price ,string $time_of_service_provision ,string $company_id ,string $warrantee_period , string $description = '-' ,string $created_by , string $was_accepted ,string $isdeleted ):string{
 
@@ -31,6 +36,8 @@
 	public function getLastAutoMadeID():Int	{
 		return (int) mysqli_insert_id($this->DbCon);
 	}
+
+	
 
 	private function query(string $query){
 		return mysqli_query ($this->DbCon, $query );

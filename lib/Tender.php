@@ -18,6 +18,13 @@
 				{
 						return $this -> weights_arr;
 				}
+				/**
+				 * @return array
+				 */
+				public function getOtherData () : array
+				{
+						return $this -> otherData;
+				}
 				
 				
 				/**
@@ -73,9 +80,10 @@
 				private $tenderProvider_Supplier;
 				private $itemsCount;
 				private $knownBrands;
+				private $otherData;
 				
 				function __construct ( array $weights_arr , float $price , ItemComponents $itemComponents , float $provision_time_period_in_days ,
-				                       TenderProvider_Supplier $tenderProvider_Supplier , float $itemsCount =1 , array $knownBrands = array()) {
+				                       TenderProvider_Supplier $tenderProvider_Supplier , float $itemsCount =1 , array $knownBrands = array() , array $otherData = array() ) {
 						$this -> weights_arr                   = $weights_arr;
 						$this -> price                         = $price;
 						$this -> itemComponents                = $itemComponents;
@@ -83,6 +91,8 @@
 						$this -> tenderProvider_Supplier       = $tenderProvider_Supplier;
 						$this -> itemsCount                    = $itemsCount;
 						$this -> knownBrands                    = $knownBrands;
+						$this -> otherData                    = $otherData;
+						#print_r($otherData);
 						
 						array_push (MultiCriteriaDecisionMaking::$thisObject , $this);
 				}

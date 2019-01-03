@@ -18,8 +18,16 @@
 						
 				}
 				public function getCompanies(){
-						return $this->query ("SELECT * FROM " . $this->TABLE);
+						return $this->query ("SELECT companies.* , YEAR(CURDATE()) - YEAR(company_dob) AS years_of_operation FROM " . $this->TABLE);
 				}
+
+				public function getCompanyDetails($company_id){
+						return mysqli_fetch_assoc(
+							$this->query ("SELECT companies.* , YEAR(CURDATE()) - YEAR(company_dob) AS years_of_operation FROM " . $this->TABLE . " WHERE id = $company_id")
+						);
+				}
+
+
 				
 				private function query(string $query){
 						return mysqli_query ($this->DbCon, $query );

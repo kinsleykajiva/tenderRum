@@ -28,6 +28,7 @@ function btnSaveTender () {
 	let tenderNumber = $("#tenderNumber").val().trim();
 	let tendertitle = $("#tendertitle").val().trim();
 	let tenderCategory = $("#tenderCategory").val();
+	let due_date = $("#due_date").val().trim();
 	let isViewedAfterSaving = $("#isViewedAfterSaving").is(":checked");
 	let editor2 = editor.container.firstChild.innerHTML ;
 	if(tenderNumber === ""){
@@ -53,6 +54,16 @@ function btnSaveTender () {
 	}
 	error_perInput("#tenderCategory", "");
 	$("#tenderCategoryReq").hide("slow");
+
+	if(due_date === ""){
+		$("#tenderDueDateReq").show("slow");
+		error_perInput("#due_date", "Due Date Required !");
+		return;
+	}
+	error_perInput("#tenderDueDateReq", "");
+	$("#tenderDueDateReq").hide("slow");
+
+
 	let inputCartegories= $("#inputCartegories");
 	let inputs = inputCartegories.find("input");
 	let selects = inputCartegories.find("select");
@@ -74,7 +85,8 @@ function btnSaveTender () {
 		editor2 : editor2 ,
 		compJson : compJson + '' ,
 		compJsonSelect : compJsonSelect + '',
-		ux:1
+		ux:1 , 
+		due_date :due_date
 	}).done(response =>{
 		loadingOverlay(false , "Saving ...");
 		if(response == 'done'){

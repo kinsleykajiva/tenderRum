@@ -45,12 +45,16 @@ function rowView(jsonData){
                                                 <td>${element.tender_number}</td>
                                                 <td>${element.title}</td>
                                                 <td>${element.date_created}</td>
-                                                 <td>${element.created_by}</td>
-                                                <td>${element.created_by}</td>
+                                                 <td>${element.due_date}</td>
+                                                <td>${element.username.toUpperCase()}</td>
                                                  <td>
                                                     <div class='table-data-feature'>
                                                         <button onclick='respondToTender("${element.id}")' class='item' data-toggle='tooltip' data-placement='top' title='Respond'>
                                                             <i class='zmdi zmdi-mail-send'></i>
+                                                        </button>
+
+                                                        <button onclick='goToResponse("${element.id}")' class='item' data-toggle='tooltip' data-placement='top' title='View Responses'>
+                                                            <i class='zmdi zmdi-home'></i>
                                                         </button>
                                                         <button class='item' data-toggle='tooltip' data-placement='top' title='Edit'>
                                                             <i class='zmdi zmdi-edit'></i>
@@ -99,8 +103,9 @@ function respondToTender(id_){
 	location.href = "respond-to-tender.php?artile=" + id_ ;
 }
 
-
-
+function goToResponse(id_){
+    location.href = "view-tenders-response.php?tender=" + id_ ;
+}
 
 
 
