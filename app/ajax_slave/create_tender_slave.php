@@ -7,6 +7,7 @@
 		 */
 		
 		if(isset($_POST['data_tender_c'])){
+			//var_dump ($_POST);exit;
 			$tenderNumber = $_POST['tenderNumber'];
 			$tendertitle = $_POST['tendertitle'];
 			$tenderCategory = $_POST['tenderCategory'];

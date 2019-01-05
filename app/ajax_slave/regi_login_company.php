@@ -1,4 +1,17 @@
 <?php
+	
+	if (isset($_POST['usernameLog'])) {
+		$usernameLog = $_POST['usernameLog'];
+		$passwordLog = $_POST['passwordLog'];
+
+		require '../DBClass/DBUsers.php';
+		$usersObj = new DBUsers();
+
+		$result = $usersObj->logInUser($usernameLog , $passwordLog) ;
+		
+		print $result ;
+		exit;
+	}
 
 	if (isset($_POST['companyName'])) {
 

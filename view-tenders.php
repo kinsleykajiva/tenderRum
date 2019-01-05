@@ -1,3 +1,6 @@
+<?php  
+require 'session_check.php';
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,33 +108,22 @@
                                             </tr>
                                         </thead>
                                         <tbody id="view_tenders_div">
-                                           <!--  <tr>
+                                           <tr style="color: red; font-weight: bolder;">
                                                  <td>
                                                     <label class="au-checkbox">
                                                         <input type="checkbox">
                                                         <span class="au-checkmark"></span>
                                                     </label>
                                                 </td>
-                                                <td>2018-09-29 05:57</td>
-                                                <td>Mobile</td>
-                                                <td>iPhone X 64Gb Grey</td>
-                                                <td class="process">Processed</td>
-                                                <td>$999.00</td>
+                                                <td >  No Data  !</td>
+                                               <td>  No Data  !</td>
+                                                <td>  No Data  !</td>
+                                                <td >  No Data  !</td>
+                                                <td>  No Data  !</td>
                                                  <td>
-                                                    <div class="table-data-feature">
-                                                        <button  class="item" data-toggle="tooltip" data-placement="top" title="Respond">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                       
-                                                    </div>
+                                                     No Data  !
                                                 </td>
-                                            </tr> -->
+                                            </tr> 
                                            <!--  <tr>
                                                 <td colspan="7">
                                                     <hr/>

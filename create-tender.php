@@ -103,7 +103,7 @@
                                         <div class="form-group">
                                             <label for="tenderCategory" class="control-label mb-1">Description</label>
                                           
-                                            <div name="quillEditor" id="quillEditor"  style="height: 135px; margin-bottom: 20px;"  class="form-control"></div>
+                                            <div name="quillEditor" id="quillEditor"  style="height: 285px; margin-bottom: 20px;"  class="form-control"></div>
 
                                             <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                         </div>

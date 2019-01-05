@@ -27,12 +27,13 @@
 				                           string $compJson , string $compJsonSelect , int $ux_i , string $due_date ):string{
 						$editor2 = !empty($editor2) ? "'$editor2'" : 'NULL';
 						$compJson = !empty($compJson) ? "'$compJson'" : '';
-						$compJsonSelect = !empty($compJsonSelect) ? "'$compJsonSelect'" : '';
+						$compJsonSelect = !empty($compJsonSelect) ? "'$compJsonSelect'" : '';	
+
 						
 						$res = $this->query ("INSERT INTO   " . $this->TABLE . " (tender_number , title , description, date_created , due_date , created_by , catagory , isdeleted )
-						VALUES ( '$tenderNumber' , '$tendertitle' ,$editor2 , NOW(), '$due_date' ,$ux_i ,$tenderCategory , 0  )");
+						VALUES ( '$tenderNumber' , '$tendertitle' ,$editor2 , NOW(), '$due_date' ,$ux_i ,$tenderCategory , 0  )") ? 'saved' : 'fail';
 						
-						if($res){
+						if($res == 'saved'){
 								$lastid = mysqli_insert_id($this->DbCon);
 								$arr = explode (','  , $compJson);
 								$compArr =  explode (','  , $compJsonSelect);
@@ -48,12 +49,14 @@
 										$qry .= "( $lastid, $brands, $wscore, NOW() ),";
 								}
 								  $qry = rtrim($qry,",");
-								 $st = "INSERT INTO tender_brands_correlations (tender_id , brand_id , weight  , date_created )
+								  $st = "INSERT INTO tender_brands_correlations (tender_id , brand_id , weight  , date_created )
 														VALUES  $qry ";
 								$jes = $this->query ($st);
 								return $jes?'done':'failed';
+						}else{
+							return 'failed11';
 						}
-						return 'failed';
+						
 				}
 				public function getTenders(){
 						return $this->query ("SELECT tenders.* , users.username , tender_categories.title

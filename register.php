@@ -202,7 +202,7 @@
               compnyPhone : compnyPhone
             }).done(respo=>{
                 loadingOverlay(false  , "Saving....") ;
-                if("done"){
+                if(respo == "done"){
                          $("#serverReponseFinal").html("<span style='color:green;'>Saved  , Log In </span>");
                 } else{
                     $("#serverReponseFinal").html("<span style='color:red;'> Failed To Save </span>");

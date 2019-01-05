@@ -42,6 +42,11 @@
 							</a>
 						</li>
 						<li>
+							<a href="brands.php">
+								<i class="fas fa-chart-bar"> </i>Brands
+							</a>
+						</li>
+						<li>
 							<a href="register-company.php">
 								<i class="fas fa-chart-bar"> </i>Register - Company
 							</a>

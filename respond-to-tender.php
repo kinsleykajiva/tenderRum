@@ -1,3 +1,6 @@
+<?php  
+require 'session_check.php';
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -138,7 +141,7 @@
                                          <div class="form-group">
                                             <label for="quillEditor" class="control-label mb-1">Description</label>
                                           
-                                            <div name="quillEditor" id="quillEditor"  style="height: 125px; margin-bottom: 20px;"  class="form-control"></div>
+                                            <div name="quillEditor" id="quillEditor"  style="height: 285px; margin-bottom: 20px;"  class="form-control"></div>
 
                                             <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                         </div>

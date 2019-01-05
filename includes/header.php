@@ -1,3 +1,5 @@
+
+
 <header class="header-desktop">
 		<div class="section__content section__content--p30">
 				<div class="container-fluid">
@@ -18,7 +20,7 @@
 										<div class="account-wrap">
 												<div class="account-item clearfix js-item-menu">
 														<div class="image">
-																<span style="visibility: hidden;" id="loggedUserId">1</span>
+																<span style="visibility: hidden;" id="loggedUserId"><?php print $_SESSION['userId'] ;?></span>
 														</div>
 														<div class="content">
 																<a class="js-acc-btn" href="#">User Admin</a>

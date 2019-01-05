@@ -21,3 +21,10 @@
 
 <link href="css/jquery.toast.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="js/nakupanda_bootstrap3dialog/bootstrap-dialog.min.css"/>
+
+<style type="text/css">
+	.spacer {
+     padding-top: 80px;
+     padding-bottom: 40px
+ }
+</style>

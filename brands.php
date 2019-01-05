@@ -9,7 +9,7 @@ require 'session_check.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Title Page-->
-    <title>Home - Dashboard</title>
+    <title>Brands - Dashboard</title>
 		
 		<?php require 'includes/shared_css.php'; ?>
 
@@ -43,11 +43,15 @@ require 'session_check.php';
                     <div class="row">
                         <div class="col-md-12">
                             <div class="overview-wrap">
-                                <h2 class="title-1">Home - Page</h2>
+                                <h2 class="title-1">Add/View Brands</h2>
 
                             </div>
                         </div>
                     </div>
+                    <div class="clearfix spacer "></div>
+                    <?php // require 'includes/add-brand.php'; ?>
+                    <?php require 'includes/view-brands.php'; ?>
+                   
 
 
                 </div>
@@ -61,6 +65,7 @@ require 'session_check.php';
 
 <!-- Jquery JS-->
 <?php require 'includes/shared_js.php'; ?>
+<script type="text/javascript" src="js/forpages/brands.js"></script>
 
 
 </body>

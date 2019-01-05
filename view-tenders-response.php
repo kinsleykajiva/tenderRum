@@ -1,3 +1,6 @@
+<?php  
+require 'session_check.php';
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -177,23 +180,21 @@
                                                  <?php   print round( $ObjKey ['rowResult'] , 4)  ; ?>
                                                      
                                                  </td>
+                                                 <td>
+                                                     <div class="btn-group">
+                                                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                     <i class="fa fa-newspaper-o fa-lg text-success "></i>  Action 
+                                                                                                          <span class="caret"></span>
+                                                 </button>
+                                                 <ul class="dropdown-menu" role="menu">
+                                                    <li onclick="viewHiddenDiv('<?php print $ObjKey['otherDataArr']['id']; ?>');" class="dropdown-item"><a href="#">View More</a></li>
+                                                    <!-- <li class="dropdown-item"><a href="#">Delete</a></li> -->
+
+                                                </ul>
+                                            </div>
+                                                 </td>
                                                 
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button onclick="viewHiddenDiv('<?php print $ObjKey['otherDataArr']['id']; ?>')" class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
+                                             
                                             </tr>
                                           
                                             

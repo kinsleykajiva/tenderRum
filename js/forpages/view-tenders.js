@@ -10,9 +10,12 @@ function getAllTenders(){
 		getData: 'value1'
 	}). done(json => {
 		let view_tenders_div = $("#view_tenders_div");
-		view_tenders_div.html(rowView(json));
-		$("#loadingConner").slideUp("fast");
-			//console.log((json))
+       
+        if(json.length){
+            view_tenders_div.html(rowView(json));          
+        }
+         $("#loadingConner").slideUp("fast");        
+			
 	}).fail((jqxhr, textStatus, error) =>{
 		loadingOverlay(false , "Saving ...");
 		showErrorMessage("Connection Failed !" , 4);
@@ -48,25 +51,23 @@ function rowView(jsonData){
                                                  <td>${element.due_date}</td>
                                                 <td>${element.username.toUpperCase()}</td>
                                                  <td>
-                                                    <div class='table-data-feature'>
-                                                        <button onclick='respondToTender("${element.id}")' class='item' data-toggle='tooltip' data-placement='top' title='Respond'>
-                                                            <i class='zmdi zmdi-mail-send'></i>
-                                                        </button>
+                                                     <div class='btn-group'>
+                                                  <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
+                                                     <i class='fa fa-newspaper-o fa-lg text-success '></i>  Action 
+                                                                                                          <span class='caret'></span>
+                                                 </button>
+                                                 <ul class='dropdown-menu' role='menu'>
+                                                    <li onclick='respondToTender("${element.id}")' class='dropdown-item'><a href='#'>Respond</a></li>
+                                                    <li onclick='goToResponse("${element.id}")' class='dropdown-item'><a href='#'>View Responses</a></li>
+                                                    <li  onclick='viewDescription("${descript_id_div}")' class='dropdown-item'><a href='#'>View </a></li>
 
-                                                        <button onclick='goToResponse("${element.id}")' class='item' data-toggle='tooltip' data-placement='top' title='View Responses'>
-                                                            <i class='zmdi zmdi-home'></i>
-                                                        </button>
-                                                        <button class='item' data-toggle='tooltip' data-placement='top' title='Edit'>
-                                                            <i class='zmdi zmdi-edit'></i>
-                                                        </button>
-                                                        <button class='item' data-toggle='tooltip' onclick='viewDescription("${descript_id_div}")' data-placement='top' title='View'>
-                                                            <i class='zmdi zmdi-plus'></i>
-                                                        </button>
-                                                         <button class='item' data-toggle='tooltip' data-placement='top' title='Delete'>
-                                                            <i class='zmdi zmdi-delete'></i>
-                                                        </button>
-                                                       
-                                                    </div>
+                                                </ul>
+                                                </div>
+
+
+
+
+
                                                 </td>
                                             </tr>
                                             <tr  style='display:none;' class='${descript_id_div}'>

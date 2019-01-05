@@ -21,7 +21,14 @@
 				
 
 				public function getBrands(){
-						return $this->query ("SELECT * FROM " . $this->TABLE);
+					// SELECT acceptable_brands.* , company_categories.title FROM acceptable_brands JOIN company_categories on company_categories.id = acceptable_brands.assoc_catagory_tags 
+						return $this->query ("SELECT acceptable_brands.* FROM acceptable_brands " );
+				}
+				public function getAllBrands(){
+					// SELECT acceptable_brands.* , company_categories.title FROM acceptable_brands JOIN company_categories on company_categories.id = acceptable_brands.assoc_catagory_tags 
+					return $this->query ("SELECT acceptable_brands.* , company_categories.title AS categoryTitle FROM 
+						acceptable_brands JOIN company_categories on   FIND_IN_SET( company_categories.id , acceptable_brands.assoc_catagory_tags) > 0
+						" );
 				}
 				
 				private function query(string $query){
