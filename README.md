@@ -10,6 +10,11 @@
 + <strong>Host:localhost</strong>
 + <strong>User:root</strong>
 + <strong>Password:</strong> (password is empty)
++ <strong>database:tenderrum</strong>
+
++ find the database in the database folder import it and open login.php
+
++ download the link <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwjS1Yyc79bfAhVATBUIHWLBDeoQFjAAegQICRAB&url=https%3A%2F%2Fwww.apachefriends.org%2Fdownload.html&usg=AOvVaw0FJaxz5J9FUgyQIdXelZ6c">Xampp with php 7.3.0 </a>
 
 
 
