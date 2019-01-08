@@ -1,4 +1,4 @@
- <div class="row m-t-30">
+ <div id="divViewData" class="row m-t-30">
                             <div class="col-md-12">
                                 <!-- DATA TABLE-->
                                 <div class="table-responsive m-b-40">
@@ -9,6 +9,7 @@
                                                 <th>Brand</th>
                                                 <th>Description</th>
                                                 <th>Category Tags</th>
+                                                <th style='display: none;' >Category Tags</th>
                                                 <th>Added Date</th>                                               
                                                 <th>Action</th>
 
@@ -23,11 +24,12 @@
                                             while($row = mysqli_fetch_assoc($DBAcceptableBrandsObjectData)){
                                                 $edit_id = $row ['id']  . '_edit';
                                             ?>
-                                         <tr style="color: red; font-weight: bolder;">
+                                         <tr style="color: red; font-weight: bolder;" id="<?php print $edit_id;   ?>">
 
                                             <td > <?php print $row ['title'] ; ?> </td>
                                             <td > <?php print $row ['description'] ; ?> </td>
                                              <td > <?php print $row ['categoryTitle'] ; ?> </td>
+                                             <td style='display: none;' > <?php print $row ['description'] ; ?> </td>
                                             <td > <?php print $row ['date_created'] ; ?> </td>
                                             <td> 
                                               <div class="btn-group">

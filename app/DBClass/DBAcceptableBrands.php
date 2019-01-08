@@ -17,7 +17,16 @@
 						$this->DbCon = mysqli_connect($HOST, $USER, $PASSWORD, $DATABASE);
 						
 				}
+				public function saveCategories(string $title , string $description , string $tag_category ):string
+					{
+						
+						return $this-> query("INSERT INTO acceptable_brands (title , description  , assoc_catagory_tags , date_created , isdeleted ) VALUES ('$title' , '$description' , '$tag_category' , NOW() , 0 ) ") ? 'done' : 'failed';
+					}
 
+				public function update(string $title , string $description , string $tag_category ,  int $id):string
+				{
+					return $this-> query("UPDATE  acceptable_brands  SET title =  '$title' , description = '$description' , assoc_catagory_tags = '$tag_category' WHERE id = $id ") ? 'done' : 'failed';
+				}
 				
 
 				public function getBrands(){

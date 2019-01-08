@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"Re",
+				"Respond"
+			],
+			[
+				"mysqli_fet",
+				"mysqli_fetch_assoc〔function〕"
+			],
+			[
+				"font",
+				"font-weight\tproperty"
+			],
+			[
+				"lo",
+				"login.php"
+			],
+			[
+				"session",
+				"session_check.php"
+			],
+			[
+				"styl",
+				"style"
+			],
+			[
+				"register",
+				"register.php"
+			],
+			[
+				"iss",
+				"isset"
+			],
+			[
+				"DB",
+				"DBUsers\t(DBUsers.php)"
+			],
+			[
+				"compa",
+				"companyCategory"
+			],
+			[
+				"DbCo",
+				"DBCompanies"
+			],
+			[
+				"com",
+				"compnyName"
+			],
+			[
 				"in",
 				"input\tTag"
 			],
@@ -48,10 +96,6 @@
 				"mysqli_fetch_assoc"
 			],
 			[
-				"mysqli_fet",
-				"mysqli_fetch_assoc\t(tenders_data.php)"
-			],
-			[
 				"tender",
 				"tenderProposalObject"
 			],
@@ -82,10 +126,6 @@
 			[
 				"sp",
 				"colspan\tAttr"
-			],
-			[
-				"lo",
-				"logout.php"
 			],
 			[
 				"slide",
@@ -308,10 +348,6 @@
 				"json_encode"
 			],
 			[
-				"DB",
-				"DBUsers\t(view-users.php)"
-			],
-			[
 				"ro",
 				"rowID"
 			],
@@ -342,10 +378,6 @@
 			[
 				"login",
 				"loginUser\t(DBUsers.php)"
-			],
-			[
-				"font",
-				"font-style\tproperty"
 			],
 			[
 				"ass",
@@ -379,6 +411,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "create-tender.php",
+			"settings":
+			{
+				"buffer_size": 11072,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "includes/shared_js.php",
+			"settings":
+			{
+				"buffer_size": 1169,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -392,6 +442,14 @@
 		"selected_items":
 		[
 			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
 				"a",
 				"Toggle AutoSave: all files"
 			],
@@ -400,20 +458,12 @@
 				"Toggle AutoSave: all files"
 			],
 			[
-				"ins",
-				"Package Control: Install Package"
-			],
-			[
 				"PHP: Generate",
 				"PHP: Generate Getters and Setters"
 			],
 			[
 				"pac",
 				"Package Control: Remove Package"
-			],
-			[
-				"in",
-				"Package Control: Install Package"
 			],
 			[
 				"auto",
@@ -469,33 +519,48 @@
 	"expanded_folders":
 	[
 		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum",
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app",
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/DBClass"
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/includes"
 	],
 	"file_history":
 	[
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/create-tender.php",
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/js/forpages/create-tender.js",
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/ajax_slave/create_tender_slave.php",
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/DBClass/DBTender.php",
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/ajax_slave/tenders_data.php",
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/view-tenders-response.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/README.md",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/brands.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/js/forpages/brands.js",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/includes/add-brand.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/DBClass/DBAcceptableBrands.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/includes/view-brands.php",
 		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/js/forpages/view-tenders-response.js",
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/js/forpages/view-tenders.js",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/session_check.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/view-tenders-response.php",
 		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/view-tenders.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/js/forpages/view-tenders.js",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/DBClass/DBTender.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/ajax_slave/create_tender_slave.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/ajax_slave/tenders_data.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/form.html",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/includes/shared_css.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/includes/shared_sidebar.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/create-tender.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/respond-to-tender.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/includes/header.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/logout.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/index.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/register.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/login.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/ajax_slave/regi_login_company.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/DBClass/DBUsers.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/DBClass/DBCompanies.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/DBClass/DBCompaniesCategories.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/register-company.php",
+		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/js/forpages/create-tender.js",
 		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/DBClass/DBTenderProposal.php",
 		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/lib/Tender.php",
 		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/lib/MultiCriteriaDecisionMaking.php",
 		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/card.html",
 		"/C/xampp/htdocs/projects/newAAllAA/untitled1/drive.php",
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/DBClass/DBCompanies.php",
 		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/lib/TenderProvider_Supplier.php",
 		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/DBClass/DBTenderBrandsCorrelations.php",
 		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/table.html",
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/respond-to-tender.php",
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/includes/shared_sidebar.php",
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/includes/header.php",
-		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/DBClass/DBAcceptableBrands.php",
 		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/js/forpages/respond-to-tender.js",
 		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/ajax_slave/submit_proposal_slave.php",
 		"/C/xampp7.3/htdocs/projects/AAllAA/tenderRum/app/DBClass/DBTenderProposalBrandAssociated.php",
@@ -585,27 +650,11 @@
 		"/C/xampp/htdocs/projects/newAAllAA/faraiProj/farai_project.sublime-project",
 		"/C/xampp/htdocs/projects/lastAAllAA/phalcon/demo-app/public/index.php",
 		"/C/xampp/htdocs/projects/testmail.php",
-		"/C/xampp/htdocs/projects/newAAllAA/androidtest/mol/silentscripts/save_adds.php",
-		"/C/Users/kajiva kinsley/AndroidStudioProjects/SimpleSale/app/src/main/res/values/colors.xml",
-		"/C/Users/kajiva kinsley/AndroidStudioProjects/ZimWeddings/app/src/main/java/mAdapters/SlidingImage_Adapter.java",
-		"/C/Users/kajiva kinsley/AndroidStudioProjects/Mol/app/src/main/java/com/mol/activities/LoogedUser.java",
-		"/C/Users/kajiva kinsley/AndroidStudioProjects/Mol/app/src/main/java/com/mol/fragments/user/NewItems_fragment.java",
-		"/C/xampp/htdocs/projects/newAAllAA/androidtest/mol/silentscripts/getallAdds.php",
-		"/C/Users/kajiva kinsley/AndroidStudioProjects/Mol/app/src/main/java/com/mol/activities/MainActivity.java",
-		"/C/Users/kajiva kinsley/AndroidStudioProjects/ZimWeddings/app/src/main/java/com/kajivakinsley/zimweddings/mReadPage.java",
-		"/C/xampp/php/php.ini",
-		"/C/xampp/htdocs/projects/newAAllAA/zend/crud/composer.json",
-		"/C/xampp/htdocs/projects/lastAAllAA/wordpress/wp-config.php",
-		"/C/xampp/htdocs/projects/newAAllAA/legalware/404.php",
-		"/C/xampp/htdocs/projects/lastAAllAA/zenddemo/zendddemo/public/index.php",
-		"/C/xampp/htdocs/projects/newAAllAA/androidtest/mol/addPost.php",
-		"/C/xampp/htdocs/projects/lastAAllAA/phalcon/demo-app/.htrouter.php",
-		"/C/Users/kajiva kinsley/Downloads/time.sql",
-		"/C/Users/kajiva kinsley/Downloads/FXMLDocumentController.java"
+		"/C/xampp/htdocs/projects/newAAllAA/androidtest/mol/silentscripts/save_adds.php"
 	],
 	"find":
 	{
-		"height": 33.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -619,6 +668,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\"",
+			"usernameLog",
+			"companyName",
+			"$compnayUsername",
+			"companyCategory",
+			"color:red;",
+			"companyAddress",
+			"companyPassword",
+			"companyEmail",
 			"return",
 			";\n",
 			"savedBrands",
@@ -723,8 +781,414 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "create-tender.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11072,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9614,
+								9614
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										9716,
+										9722
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/tag.png",
+										"region.orangish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										9668,
+										9674
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										10440,
+										10441
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										8485,
+										8486
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"git_gutter_is_enabled": true,
+							"intellitip_row": 150,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2720.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "includes/shared_js.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1169,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								938,
+								938
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										43,
+										49
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/tag.png",
+										"region.orangish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1,
+										7
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"git_gutter_is_enabled": true,
+							"intellitip_row": 22,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		},
 		{
@@ -735,7 +1199,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 33.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -761,7 +1225,7 @@
 		"cols":
 		[
 			0.0,
-			0.933052708638,
+			0.964721462748,
 			1.0
 		],
 		"rows":
@@ -787,7 +1251,7 @@
 	"project": "tender-rum.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -825,7 +1289,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 270.0,
+	"side_bar_width": 217.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

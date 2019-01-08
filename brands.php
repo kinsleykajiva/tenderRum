@@ -43,14 +43,16 @@ require 'session_check.php';
                     <div class="row">
                         <div class="col-md-12">
                             <div class="overview-wrap">
-                                <h2 class="title-1">Add/View Brands</h2>
+                                <h2 class="title-1">Add/View Brands</h2> 
+                                <button id="addBtn" onclick="viewAdd()" class="btn btn-success">Add</button>
+                                <button style="display: none;" id="backBtn" onclick="backView()" class="btn btn-info">Back</button>
 
                             </div>
                         </div>
                     </div>
                     <div class="clearfix spacer "></div>
-                    <?php // require 'includes/add-brand.php'; ?>
-                    <?php require 'includes/view-brands.php'; ?>
+                    <?php  require 'includes/add-brand.php'; ?>
+                    <?php  require 'includes/view-brands.php'; ?>
                    
 
 
@@ -64,8 +66,14 @@ require 'session_check.php';
 </div>
 
 <!-- Jquery JS-->
-<?php require 'includes/shared_js.php'; ?>
-<script type="text/javascript" src="js/forpages/brands.js"></script>
+<?php require 'includes/shared_js.php'; 
+$i = random_int(548, 59845845);
+echo "<script src='js/forpages/brands.js?v=$i'></script>";
+?>
+<!-- <script type="text/javascript" src="js/forpages/brands.js?v=2"></script> -->
+<script type="text/javascript">
+    
+</script>
 
 
 </body>

@@ -15,7 +15,7 @@ class DBCompaniesCategories {
 
 	}
 
-
+	
 
 	public function saveCategory($value='') {
 		# code...

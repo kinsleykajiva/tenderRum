@@ -11,6 +11,7 @@
 		<?php require 'includes/shared_css.php'; ?>
     <link rel="stylesheet" href="js/quil-editor/quill.snow.css">
     <link rel="stylesheet" type="text/css" href="js/iCheck/flat/red.css"/>
+<!--     <script type="text/javascript" src=./js/jquery-3.3.1.slim.js></script> -->
 
 </head>
 
@@ -147,7 +148,7 @@
                                             <div class="form-group">
                                                 <label for="street" class=" form-control-label">Score</label>
                                                 <select type="text" id="company_score"  class="form-control">
-                                                   
+                                                 
                                                     <option selected="selected" value="null">Select</option>
                                                     <option  value="1">(1) Acceptable</option>
                                                     <option  value="2">(2) Good </option>
@@ -180,6 +181,7 @@
 <?php require 'includes/shared_js.php'; ?>
 <script src="js/iCheck/icheck.min.js"></script>
 <script src="js/quil-editor/quill.min.js"></script>
+
 <script src="js/forpages/create-tender.js"></script>
 <script>
 
